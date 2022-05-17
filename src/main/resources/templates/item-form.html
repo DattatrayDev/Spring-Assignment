@@ -9,38 +9,32 @@
 </head>
 <body>
 <h2 style="text-align: center;background: limegreen">Enter details of new item to be added to super market</h2>
-<form name="logoutForm" th:action="@{/logout}" method="post" style=" margin-top: 1px;
-     margin-right: 2px;
-     position:absolute;
-     top:0;
-     right:0;">
-    <input class="btn btn-warning" type="submit" value="Sign Out"/>
-</form>
 <br/>
 
 <form th:action="@{/staff/saveItem}" th:object="${item}" method="post">
     <div style="width: 600px;height: auto;margin-left: auto;margin-right: auto">
-    <table class="table table-dark">
-        <tbody>
-        <tr>
-            <td><label for="itemName">Enter Name</label>:</td>
-            <td><input type="text" id="itemName"  name="itemName" autofocus="autofocus" required placeholder="enter name of the item"/> <br /></td>
-        </tr>
-        <tr>
-            <td><label for="cost">Enter Cost</label>:</td>
-            <td><input type="text" id="cost" name="cost"  autofocus="autofocus" required placeholder="enter cost of the item"/> <br /></td>
-        </tr>
-        <tr>
-            <td><label for="company">Enter Company</label>:</td>
-            <td><input type="text" id="company" name="company"  autofocus="autofocus" required placeholder="enter item's company name"/> <br /></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="update"/></td>
-            <td></td>
-        </tr>
+        <table class="table table-dark">
+            <tbody>
+            <tr>
+                <td><label for="itemName">Enter Name</label>:</td>
+                <td><input type="text" id="itemName"  name="itemName" autofocus="autofocus" required placeholder="enter name of the item"/> <br /></td>
 
-        </tbody>
-    </table>
+            </tr>
+            <tr>
+                <td><label for="cost">Enter Cost</label>:</td>
+                <td><input type="text" id="cost" name="cost"  autofocus="autofocus" required placeholder="enter cost of the item"/> <br /></td>
+            </tr>
+            <tr>
+                <td><label for="company">Enter Company</label>:</td>
+                <td><input type="text" id="company" name="company"  autofocus="autofocus" required placeholder="enter item's company name"/> <br /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="update"/></td>
+                <td></td>
+            </tr>
+
+            </tbody>
+        </table>
     </div>
 </form>
 <br/>

@@ -2,6 +2,8 @@ package com.shop.supermarket.entity;
 
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,8 @@ public class Items {
     @Column(name = "item_id")
     private int itemId;
 
+    @NotNull(message = "only contains string")
+    @Size(min=1)
     @Column(name = "item_name")
     private String itemName;
 
@@ -49,6 +53,9 @@ public class Items {
         this.itemName = itemName;
         this.cost = cost;
         this.company = company;
+    }
+
+    public Items(String itemName) {
     }
 
     public void addUser(Users theUser)

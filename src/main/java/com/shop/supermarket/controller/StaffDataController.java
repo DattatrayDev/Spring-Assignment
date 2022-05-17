@@ -5,6 +5,7 @@ import com.shop.supermarket.converter.ItemsConverter;
 import com.shop.supermarket.converter.UsersConverter;
 import com.shop.supermarket.dto.ItemsDTO;
 import com.shop.supermarket.dto.UsersDTO;
+import com.shop.supermarket.entity.Items;
 import com.shop.supermarket.entity.Users;
 import com.shop.supermarket.service.ItemsService;
 import com.shop.supermarket.service.UsersService;
@@ -98,16 +99,16 @@ public class StaffDataController {
         return "item-form";
     }
 
-
     @PostMapping("/saveItem")
-    public String saveNewItem(@ModelAttribute("item")ItemsDTO itemsDTO)
+    public String saveNewItem(@Valid @ModelAttribute("item")ItemsDTO itemsDTO)
     {
         itemsServiceObject.saveItem(itemsConverterObject.dtoToEntity(itemsDTO));
         return SUCCESS_HANDLER;
     }
 
+
     @PostMapping("/updateItem")
-    public String updateItem(@RequestParam("itemId") int itemId, Model model)
+    public String updateItem(@Valid @RequestParam("itemId") int itemId, Model model)
     {
         model.addAttribute("item",itemsConverterObject.entityToDto(itemsServiceObject.getItemById(itemId)));
         return "item-update";
